@@ -1,0 +1,212 @@
+/* ==========================================================================
+   1. VARIABLES & RESET GENERAL
+   ========================================================================== */
+:root {
+  /* Paleta de colores */
+  --bg-dark: #0f172a;          /* Fondo principal ultra oscuro */
+  --bg-card: #1e293b;          /* Fondo para tarjetas e ítems */
+  --bg-card-hover: #334155;    /* Estado hover de tarjetas */
+  
+  --primary: #38bdf8;          /* Azul cian brillante */
+  --primary-hover: #0284c7;    /* Azul para hovers */
+  --accent: #6366f1;           /* Violeta moderno */
+  
+  --text-main: #f8fafc;        /* Texto principal */
+  --text-muted: #94a3b8;       /* Texto secundario / suave */
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* Tipografía y medidas */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.25s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   2. HEADER & NAVEGACIÓN
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar a:hover {
+  color: var(--primary);
+}
+
+.navbar .nav-btn {
+  background: rgba(56, 189, 248, 0.1);
+  color: var(--primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.navbar .nav-btn:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (INICIO)
+   ========================================================================== */
+.hero {
+  padding: 7rem 0 4rem;
+  text-align: center;
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(56, 189, 248, 0.1);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.hero-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botones reusables */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-muted);
+}
+
+/* ==========================================================================
+   4. MÉTRICAS / ESTADÍSTICAS (STATS)
+   ========================================================================== */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.stat-item .num {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
